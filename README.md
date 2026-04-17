@@ -1,2 +1,2 @@
-# gitproxy-testtest
+# gitproxy-test
 test
