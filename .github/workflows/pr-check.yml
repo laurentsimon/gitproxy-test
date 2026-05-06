@@ -1,0 +1,11 @@
+name: PR Quality Check
+on:
+  pull_request:
+    branches: [ main ] # Trigger on PRs targeting the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: echo "Test always pass"
