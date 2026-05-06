@@ -1,0 +1,16 @@
+name: Hello World Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the world
+        env:
+          USER: ${{ inputs.name }} 
+        run: echo "Hello, $USER!" 
