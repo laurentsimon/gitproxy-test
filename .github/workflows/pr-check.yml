@@ -7,5 +7,19 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Tests
-        run: echo "Test always pass"
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Run Tests
+      run: echo "Test always pass"
+
+    - name: Scan for Unresolved TODOs
+      run: |
+        echo "🔍 Scanning codebase for unresolved TODOs or FIXMEs..."
+        # Case-insensitive search for 'todo' or 'fixme' in all files,
+        # excluding the system .git directory.
+        if grep -rni --exclude-dir=".git" -E "todo|fixme" .; then
+          echo "⚠️  Unresolved TODOs or FIXMEs were detected in the files listed above."
+        else
+          echo "🎉 No unresolved TODOs or FIXMEs found! The codebase is clean."
+        fi
