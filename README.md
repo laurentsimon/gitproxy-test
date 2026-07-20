@@ -1,22 +1,3 @@
 # gitproxy-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
-test
+
+This project is currently a work in progress (WIP).
